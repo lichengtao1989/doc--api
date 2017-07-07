@@ -1,0 +1,2492 @@
+===========================================字体=========================================================================
+font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+===========================================字体=========================================================================
+=========================================git 使用=========================================================================
+git clone git@gitlab.ipaychat.com:lichengtao/weblive.git
+git add -A
+git commit -m "add"
+git.exe push git@gitlab.ipaychat.com:cpi/html.git
+
+=========================================正则表达式检测汉字==============================================================
+ var reg = new RegExp("[\u4E00-\u9FFF]+", "g");
+   
+     console.log(reg.test('hah哈哈'))
+     console.log(reg.test('//hah11'))
+=========================================正则表达式检测汉字==============================================================
+=====================================================微信配置==============================================================
+/*
+//微信配置
+ $.ajax({
+        type: "get",
+        async: false,
+        url: apphost+'wx!getWXJsConfigInfo.htm',
+        data: {
+            "url":encodeURIComponent(location.href.split('#')[0])
+        },
+        dataType: "jsonp",
+        jsonp: "callback",
+        jsonpCallback: "callback",
+        success: function(data) {
+            console.log(data);
+	    var appId = data.appId;
+            var timeStamp = data.timestamp;
+            var nonceStr = data.nonceStr;
+            var signaTure = data.signature;
+            /*微信配置*/
+            wx.config({
+                appId: appId, // 必填，公众号的唯一标识
+                timestamp: timeStamp, // 必填，生成签名的时间戳
+                nonceStr: nonceStr, // 必填，生成签名的随机串
+                signature: signaTure, // 必填，签名，见附录1
+                jsApiList: [
+                    'onMenuShareTimeline',
+                    'onMenuShareAppMessage',
+                    'onMenuShareQQ',
+                    'onMenuShareWeibo',
+           	    'chooseWXPay'
+                ]
+            });
+           
+        },
+        error: function(error) {
+            console.log('fail');
+        }
+    });
+//微信配置
+*/
+
+ /*执行微信ready方法*/
+    wx.ready(function() {
+        /*分享到朋友圈*/
+        wx.onMenuShareTimeline({
+            title: '抡锤砸金蛋啦~',
+            link: window.location.href,
+            imgUrl: 'http://www.hecaifu.com/activity/Golden_eggs/img/appshareimg.jpg',
+            success: function() {},
+            cancel: function() {}
+        });
+        /*分享到朋友圈*/
+        /*发送给朋友*/
+        wx.onMenuShareAppMessage({
+            title: '抡锤砸金蛋啦~',
+            desc: '[和财富]优惠派送不停歇，千元红包砸出来！抡起锤子，砸开金蛋，红包拿走，数量有限哦！',
+            link: window.location.href,
+            imgUrl: 'http://www.hecaifu.com/activity/Golden_eggs/img/appshareimg.jpg',
+            success: function() {
+
+            },
+            cancel: function() {
+
+            }
+        });
+        /*发送给朋友*/
+    });
+    /*执行微信ready方法*/
+=====================================================微信配置==============================================================
+=====================================================5位随机数============================================================
+
+var numRandom=parseInt(Math.random() * 89999) + 10000;
+=====================================================5位随机数============================================================
+=====================================================pc跳移动端页面========================================================
+var sUserAgent = navigator.userAgent.toLowerCase();
+    var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+    var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+    var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+    var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+    var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+    var bIsAndroid = sUserAgent.match(/android/i) == "android";
+    var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+    var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+    if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid
+            || bIsCE || bIsWM) {
+        window.location.href = "http://www.ipaychat.com/d.html";
+    }
+
+=====================================================pc跳移动端页面========================================================
+
+=====================================================iphone 屏幕显示尺寸====================================================
+iphone5 ww-320 wh-460 safari
+iphone6s ww-414 wh-628 safari
+==========================================================node html set======================================================
+app.engine('.html', require('ejs').__express);
+app.set('view engine', 'html');
+==========================================================node html set======================================================
+=========================================================游览器icon============================================================
+<link rel="icon" href="//p1.meituan.net/tuanpic/1e4d71577b7922f1ab756d202e1ac4af1342.ico" type="image/x-icon">
+=========================================================游览器icon============================================================
+=========================================================判断ie游览器==========================================================
+   var uA = navigator.userAgent;
+
+            function isIE() { //ie?
+                if (!!window.ActiveXObject || "ActiveXObject" in window) {
+                    return true;
+                } else {
+                    return false; 
+                };
+            };
+=========================================================判断ie游览器==========================================================
+========================================================npm 包发布＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+npm init：
+创建一个index.js 作为包的接口，一个简单的包就制作完成了。
+npm adduser 根据
+提示输入用户名、密码、邮箱，等待账号创建完成。
+完成后可以使用 npm whoami 测验是
+否已经取得了账号。
+在 package.json 所在目录下运行 npm publish，稍等片刻就可以完成发布了。
+=========================================================mongodb==========================================================================
+启动：
+D:\software\mongoDb\bin>mongod --dbpath D:\software\mongoDb\data\db
+=========================================================mongodb==========================================================================
+=========================================================git ================================================================================
+git init
+git add -A
+git add .
+git commit -m "lct"
+git push origin master
+=========================================================git ===========================================================================================git ================================================================================
+==========================================================scss 过渡=================================================================================================
+@import "compass/css3";
+@import "var";
+$base:50;
+.ov{@include ov;}
+.float{@include float;}
+/*main style begin*/
+/*main style begin*/
+
+@keyframes opacityShow {
+    0% {
+        opacity: 0
+    }
+    50% {
+        opacity: 0
+    }
+    60% {
+        opacity: 0.6
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes opacityShow {
+    0% {
+        opacity: 0
+    }
+    50% {
+        opacity: 0
+    }
+    60% {
+        opacity: 0.6
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+#main_page {
+    transition: all 0.75s;
+    animation: opacityShow 0.75s;
+    -webkit-animation: opacityShow 0.75s;
+    @include ov;
+    @include pr;
+    box-sizing: border-box;
+    width: 750rem/$base;
+    @include mag;
+}
+
+==========================================================scss 过渡=================================================================================================
+=========================================================js 框架 记录===============================================================================================
+(swiper 轮播图插件)  (countdown  倒计时插件)  (fullpage 全屏滚动插件)  (SuperMarquee.js 文字滚动插件)
+=========================================================js 框架 记录===============================================================================================
+===========================================================<script src="js/imagesloaded.min.js"></script>===========================================================
+// element
+imagesLoaded( document.querySelector('#container'), function( instance ) {
+  console.log('all images are loaded');
+});
+// selector string
+imagesLoaded( '#container', function() {...});
+// multiple elements
+var posts = document.querySelectorAll('.post');
+imagesLoaded( posts, function() {...});
+绑定自定义事件：
+
+
+var imgLoad = imagesLoaded( elem );
+function onAlways( instance ) {
+  console.log('all images are loaded');
+}
+// bind with .on()
+imgLoad.on( 'always', onAlways );
+// unbind with .off()
+imgLoad.off( 'always', onAlways );
+===========================================================<script src="js/imagesloaded.min.js"></script>===========================================================
+===========================================================<script src="js/countdown.js"></script>===========================================================
+<script type="text/javascript">
+			/* Countdown */
+			$('.countdown').countdown('2028/10/16', function(event) {
+			 var $this = $(this).html(event.strftime(''
+				 + '<div class="date">%Y <span>Years</span></div> '
+				 + '<div class="date">%m <span>Months</span></div>  '
+				 + '<div class="date">%H <span>Hrs</span></div>  '
+				 + '<div class="date">%S <span>Sec</span></div> '));
+			});
+		</script>
+===========================================================<script src="js/countdown.js"></script>===========================================================
+=============================================================background-attachment======background-size=====================================================
+background-attachment :定义背景图片随滚动轴的移动方式
+取值: scroll | fixed | inherit
+scroll: 随着页面的滚动轴背景图片将移动
+fixed: 随着页面的滚动轴背景图片不会移动
+inherit: 继承初始值: scroll
+继承性: 否
+适用于: 所有元素
+
+background-size: auto(原始图片大小) || number(数值) || percentage(百分比) || cover(放大铺满) || contain(缩小铺满) 
+=============================================================background-attachment======background-size=====================================================
+==============================================================Ajax开始--ajax结束=============================================================
+$(document).ajaxStart(function() {
+    $(".log").text("Triggered ajaxStart handler.");
+});
+$.ajax({
+    type: "get",
+    async: false,
+    url: "http://w.api.xiaoying.co/webapi2/rest/user/detail",
+    data: {
+        "appkey": "30000000",
+        "auid": "e1nv"
+    },
+    dataType: "jsonp",
+    jsonp: "callback",
+    jsonpCallback: "info_detail",
+    success: function(data) {
+        console.log(data)
+    },
+    error: function(error) {
+        console.log('info_detail_fail');
+    }
+});
+
+
+
+$(document).ajaxStop(function() {
+    var t = setTimeout(function() {
+        $(".log").hide();
+    }, 700)
+
+});
+==============================================================Ajax开始--ajax结束=============================================================
+======================================avigator.credentials.get()，就自动登陆==================================================================
+现在浏览器有一个保存登陆密码的API。已注册用户访问的时候，只要调用navigator.credentials.get()，就自动登陆，避免了每次都要输入用户名和密码的麻烦
+======================================avigator.credentials.get()，就自动登陆==================================================================
+=================================================================获取ip地址已经省市区--js方式==================================
+第一种:
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script> 
+<script> 
+console.log(returnCitySN)
+document.write(returnCitySN["cip"]+','+returnCitySN["cname"]) 
+</script>
+
+第二种:
+var url = 'http://chaxun.1616.net/s.php?type=ip&output=json&callback=?&_='+Math.random(); 
+ $.getJSON(url, function(data){  
+ 	console.log(data)
+           
+    });  
+=================================================================获取ip地址已经省市区--js方式==================================
+=================================================================***babel 使用**================================================
+npm install -g babel  (全局安装)
+npm install -g babel-cli (全局安装)
+npm install babel-preset-es2015   (把es6编译成es5)(开发的目录安装)
+babel test1.js --watch --out-file test1out.js --presets es2015 (监听-编译输出单个文件 --命令行打开的目录要再编译的js文件夹)
+babel -d j2s/ js/ --presets es2015  (babel编译 整个js目录 输出的目录为j2s 编译es2015的语法 --命令行打开的目录要再根目录)
+=================================================================***babel 使用**================================================
+=================================================================* 千位分隔符===================================================
+/**
+ * Created by aresn on 16/7/4.
+ */
+/**
+* 千位分隔符
+* */
+
+module.exports = function(value) {
+    return value.toString().replace(/\B(?=(\d{3})+$)/g,',');
+};
+
+//传字符串格式的数据
+=================================================================* 千位分隔符===================================================
+=================================================================字体设置======================================================
+    font-family:"Microsoft YaHei",Arial,sans-serif;
+=================================================================字体设置======================================================
+=================================================================时间格式化====================================================
+    //时间转换  格式:2014-08-15 00:00:00
+    function transFormatDate(value) {
+        function formatDate(now) {
+            var year = now.getFullYear();
+            var month = now.getMonth() + 1;
+            var date = now.getDate();
+            var hour = now.getHours();
+            var minute = now.getMinutes();
+            var second = now.getSeconds();
+            if (second < 10) {
+                second = '0' + second;
+            }
+            if (minute < 10) {
+                minute = '0' + minute;
+            }
+            return year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second;
+        }
+        if (value == null || value == '') {
+            return '-';
+        }
+        var d = new Date(value);
+        return formatDate(d);
+    }
+=================================================================时间格式化====================================================
+==================================================================seajs=========================================================
+// 所有模块都通过 define 来定义
+define(function(require, exports, module) {
+
+ 
+
+    // 通过 require 引入依赖
+    var $ = require('jquery');
+    
+
+   
+
+});
+==================================================================seajs=========================================================
+===================================================================倒计时=====================================================
+ 转成getTime()格式
+
+    function showCountDownTimeFun(fixedTime,nowTime,classname){
+	//fixedTime  发标时间
+	//nowTime 服务器当前时间
+	//classname
+	var dd="";
+      var sys_second1 = (fixedTime - nowTime)/1000;
+      var timer1 = setInterval(function(){
+        if (sys_second1 > 1) {
+        	sys_second1 -= 1;
+          var day1 = Math.floor((sys_second1 / 3600) / 24);
+          var hour1 = Math.floor((sys_second1 / 3600) % 24);
+          var minute1 = Math.floor((sys_second1 / 60) % 60);
+          var second1 = Math.floor(sys_second1 % 60);
+          var showDay1 = day1;
+          var showHour1 = hour1<10?"0"+hour1:hour1;//计算小时
+          var showMinute1 = minute1<10?"0"+minute1:minute1;//计算分钟
+          var showSecond1 = second1<10?"0"+second1:second1;//计算秒
+		  $('.'+classname).html(+showDay1+'天'+showHour1+':'+showMinute1+':'+showSecond1);
+        } else {
+        	// clearInterval(timer1);
+         //    window.location.reload();  
+        };
+      }, 1000);  
+};
+
+showCountDownTimeFun(list[i].putStartTime,data.nowTime,"djscx"+i)
+===================================================================倒计时=====================================================
+===================================================================babel 使用==================================================
+npm install --global babel-cli
+npm install --save babel-preset-es2015(当前目录)
+===================================================================babel 使用==================================================
+===================================================================SEAJS  使用==================================================
+<script src="${theme_dir}/wx/js/sea.js"></script>
+<script>seajs.use('${theme_dir}/wx/js/index_revise.js');</script>
+********************************************************************************************************************************
+define(function(require, exports, module) {
+    //首页轮播图片加载
+    require.async(['../plugin/swiper/swiper.min.js'], function() {
+
+        $.ajax({
+            url: "/index/articleList.html?nid=appadbanner",
+            type: "post",
+            success: function(result) {
+                var data = result.data;
+                var len = data.length;
+                var str = "";
+                for (i = 0; i < len; i++) {
+                    var htmli = data[i].content;
+                    str += '<a class="swiper-slide" href="' + data[i].introduction + '"><img src="' + data[i].picPath + '" class="img_swiper" /></a>'
+                };
+                $('#swiper_lct_append').html(str);
+                var swiper = new Swiper('.swiper-container', {
+                    pagination: '.swiper-pagination',
+                    spaceBetween: 0,
+                    centeredSlides: true,
+                    autoplay: 32000,
+                    effect: 'slide',
+                    loop: true,
+                    autoplayDisableOnInteraction: false
+                });
+            }
+        });
+    });
+    /*one list*/
+    $.ajax({
+        url: "/invest/investJson.html",
+        data: {
+            "type": 100,
+            "aprSearch": -1,
+            "moneySearch": -1,
+            "timeSearch": -1,
+            "status": -2,
+            "order": 0,
+            "borrowName": ""
+        },
+        type: "get",
+        success: function(result) {
+            
+        }
+    });
+    /*one list*/
+    
+})
+********************************************************************************************************************************
+===================================================================SEAJS  使用==================================================
+===================================================================box-shadow  实现边框效果=====================================
+.d3{
+    width:100px;
+    height:100px;
+    background:red;
+    box-shadow: 0 0 0 10px #ddd;
+    margin:20px;
+}
+===================================================================box-shadow  实现边框效果=====================================
+===================================================================游览器标签上的icon设置========================================
+<link rel="shortcut icon" type="image/x-icon" href="http://res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/common/favicon22c41b.ico">
+===================================================================游览器标签上的icon设置========================================
+===================================================================滚动条隐藏=====================================
+::-webkit-scrollbar{width:0px}
+===================================================================滚动条隐藏=====================================
+===================================================================body height 100%=====================================
+在移动端中body和html如果都设置了html,body{height:100%;width:100%;}那么页面的宽高就相当于是手机屏幕的宽高了，页面里面的元素
+超出就都不显示了，所以有的页面是单页全屏的话，设置body{height:100%;width:100%;}.main{width:750rem/$base;height:100%}
+如果不是全屏单页的网页，那body,html就不用设置{width:100%;height:100%;}
+===================================================================body height 100%=====================================
+=================================================================rem 和1px 处理========================================= 
+关于设计稿上1px的border的问题 如果用了flexible.js 设置border:1px solid #663399;在ios下由于缩放比，会显得特别的细，如果要处理的好点的话
+就需要用选择器额外写一个样式  [data-dpr="3"] .inner_part{border-top:3px solid #fff;}
+
+一般情况下就我自己写的那个font_lct.js这个js文件好了，meta中的viewport都是1  rem和px可以比较好的混合应用
+=================================================================rem 和1px 处理========================================= 
+=================================================================height 与line-height========================================= 
+.inner_part4{height:30px;border:10px solid #663388;margin-top: 30px;line-height:30px;}
+height等于line-height 单行文字垂直居中
+=================================================================height 与line-height========================================= 
+=================================================================-webkit-font-smoothing========================================= 
+-webkit-font-smoothing:none | antialiased | subpixel-antialiased   ---antialiased 
+-moz-osx-font-smoothing: inherit | grayscale  --->grayscale  
+=================================================================-webkit-font-smoothing========================================= 
+=================================================================css flex========================================= 
+.part2,.part_1 {
+	//parents
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.inner_content1,
+.inner_content2,
+.inner_content3,.name_part,.time_part {
+	//children
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+.inner_content2{width:150rem/$base;@include te();}
+=================================================================css flex========================================= 
+=================================================================禁止用户选中网页上的内容========================================= 
+<!-- 禁止用户选中网页上的内容，IE及Chrome下的方法一样，使用 onselectstart="return false"
+      -- Firefox 下，控制 css: body {-moz-user-select: none;}
+    -->
+    <body onselectstart="return false;" style="-moz-user-select:none;">
+=================================================================禁止用户选中网页上的内容=========================================
+=================================================================getBoundingClientRect()=========================================
+var div=document.getElementById('div1');
+console.log(div.getBoundingClientRect())
+/*ClientRect {}
+bottom: 285.109375
+height: 184.3125
+left: 73.40625
+right: 584.59375
+top: 100.796875
+width: 511.1875
+*/
+getBoundingClientRect()方法返回一个对象，对象里面有几个值，其中有width和height是自身的实际值，top，bottom，left，right，相对于游览器窗口的一些距离值
+=================================================================getBoundingClientRect()=========================================
+================================================================= 和财富app 分享================================================
+	<a onclick="shareToSns('和财富，您的私人财富管家！','诚邀您一同体验和财富的私人财富管家服务！','http://www.hecaifu.com/invite/invite_user.html','http://www.hecaifu.com/activity/logo/hecaifu_logo.png')" href="javascript:android.shareToSns('和财富，您的私人财富管家！','诚邀您一同体验我们的私人财富管家服务！和你、和我、和财富。','http://www.hecaifu.com/invite/invite_user.html','http://www.hecaifu.com/activity/logo/hecaifu_logo.png')" class="invite_a" id="invite_a">邀请</a>
+==================================================================和财富app 分享==============================================================
+=================================================================css3 flex 居中==================================================
+ /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+=================================================================css3 flex 居中==================================================
+=================================================================生成一个区间内的随机数==========================================
+ /*随机数生成函数，在给定的范围内(random([min, max]))随机生成一个值，
+             *因为此案例要在 20 张海报中随机选取一张居中显示，以及在左右两个分区内随机摆放
+             *剩余海报，因为海报数量和左右区域都是有限制的，所以必须在给定范围内生成随机数。
+             *传入的参数 range 是一个包含两个数值的数组，这两个数值即是给定范围的最小值(包含)和最大值(包含)
+             *Math.random() 随机生成介于 0.0 ~ 1.0 之间的一个伪随机数
+             */
+            function random(range){
+                var min = Math.min(range[0], range[1]);
+                var max = Math.max(range[0], range[1]);
+                var diff = max - min;
+                /*
+                 *例如 [1, 20]，则 diff = 19 --> 0 <= Math.round(Math.random() * diff) <= 19
+                 *然后再加上最小值，即可随机生成 1 ~ 20 之间的任意数，如果使用 Math.floor() 则
+                 *生成 1 ~ 19 之间的任意数，使用 Math.ceil() 则生成 2 ~ 20 之间的任意数
+                 */
+                var number = Math.round(Math.random() * diff) + min;
+                return number;
+            }
+=================================================================生成一个区间内的随机数==========================================
+==================================================================清除浮动================================================================================
+ .floatfix{
+    *zoom:1;
+}
+.floatfix:after{
+    content:"";
+    display:table;
+    clear:both;
+}
+ /***************1***************/
+   /* For modern browsers */
+.cf:before,.cf:after {
+content:"";
+display:table;
+}
+.cf:after { clear:both; }/* For IE 6/7 (trigger hasLayout) */
+.cf { zoom:1; }
+/***************1***************/
+/***************2***************/
+.clearfix:after {content:"."; display:block; height:0; visibility:hidden; clear:both; }
+.clearfix { *zoom:1; }
+/***************2***************/
+==================================================================清除浮动================================================================================
+===================================================================html 5 存储=============================================================================
+//check to see if localstorage is present (browser supports HTML5)
+
+if (('localStorage' in window) && window.localStorage !== null) {
+
+    //store items
+
+    localStorage.wishlist = '["Bear", "Cow", "Pig"]';}
+************************************************************************
+var storage = window.localStorage;
+if(window.localStorage){
+ alert('This browser supports localStorage');
+}else{
+ alert('This browser does NOT support localStorage');
+}
+localStorage.a = 3;//设置a为"3"
+localStorage["a"] = "sfsf";//设置a为"sfsf"，覆盖上面的值
+localStorage.setItem("b","isaac");//设置b为"isaac"
+var a1 = localStorage["a"];//获取a的值
+var a2 = localStorage.a;//获取a的值
+var b = localStorage.getItem("b");//获取b的值
+localStorage.removeItem("c");//清除c的值
+ 
+var details = {author:"isaac","description":"fresheggs","rating":100};
+storage.setItem("details",JSON.stringify(details));
+details = JSON.parse(storage.getItem("details"));
+===================================================================html 5 存储=============================================================================
+===================================================================　继承 box-sizing========================================================================
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+===================================================================　继承 box-sizing========================================================================
+====================================================================/*获取url参数*/====================================================================
+function getUrlParam(name){  
+//构造一个含有目标参数的正则表达式对象  
+var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");  
+//匹配目标参数  
+var r = window.location.search.substr(1).match(reg);  
+//返回参数值  
+if (r!=null) return unescape(r[2]);  
+return null;  
+}
+
+var unionid=getUrlParam('unionid');  
+
+/*get url data*/
+var locationsearch = window.location.search;
+var getUrlArgument = function(urlstr, strflag) {
+    var c = "";
+    if (urlstr.length > 0 && urlstr.indexOf("?") == 0) {
+        var urlfrom = urlstr.substr(1);
+        var split1 = urlfrom.split('&');
+        for (var i = 0; i < split1.length; i++) {
+            var temp = split1[i].split('=');
+            if (temp && temp.length == 2) {
+                if (temp[0] == strflag) {
+                    c = temp[1];
+                };
+            };
+        };
+    };
+    return c;
+};
+/*get url data*/
+--------------------------------------------------------------------------------------------------------------------------------------------------
+var urlData = window.location.search;
+
+function getUrlData(name,url) {
+    var reg = new RegExp("(^|\\?|&)" + name + "=([^&]*)(\\s|&|$)", "i");
+    if (reg.test(url)) return decodeURIComponent(RegExp.$2.replace(/\+/g, " "));
+    return "";
+};
+console.log(getUrlData('mobile',urlData))
+ /*获取url参数*/ 
+var locationsearch = window.location.search; //channel=qa
+if(locationsearch.length > 0 && locationsearch.indexOf("?") == 0) {
+        var urlfrom = locationsearch.substr(1);
+        //参数部分 去除问号 fromApp=XiaoYing&channel=baidu  substr(star,length)
+        var split1=urlfrom.split('&');
+        for(var i=0;i<split1.length;i++){
+            var temp=split1[i].split('=');
+            if(temp && temp.length ==2){
+                if(temp[0] == 'ayid') {
+                    ayid = temp[1];       
+                };
+            };
+        };
+    };
+/*获取url参数*/
+/*获取摸个字符串中的属性的对应值*/
+        function getFieldVal(str, flag, flagsubstr, field) {
+            //str 需要处理的字符串,以flag位标记分割成数组,以flagsubstr为标记取字段和值,field需要取哪个字段的值
+            var returnPart = "";
+            var array1 = [];
+            var strOperate = "";
+            if (str.indexOf(field) != -1) {
+                strOperate = str;
+                if (strOperate.indexOf(flag) != -1) {
+                    array1 = strOperate.split(flag);
+                    for (var i = 0; i < array1.length; i++) {
+                        if (array1[i].indexOf(field) != -1) {
+                            returnPart = array1[i].split(flagsubstr)[1];
+                        }
+                    }
+                } else {
+                    returnPart = strOperate.split(flagsubstr)[1];
+                }
+            } else {
+                returnPart = "";
+            }
+            return returnPart;
+        }
+        /*获取摸个字符串中的属性的对应值*/
+        var locationsearch = window.location.search;
+        var mobile=getFieldVal(locationsearch,"&","=","mobile");
+        $('.input_phone1').val(mobile);
+====================================================================/*获取url参数*/====================================================================
+======================================================================一屏幕设置=========================================================================
+$(function(){
+
+var windowWidth=$(window).width();
+var windowHeight=$(window).height();
+var fontSize=windowWidth/320*20;
+$('html').css('fontSize',fontSize);
+$('.main').width(windowWidth).height(windowHeight);
+
+
+});
+======================================================================一屏幕设置=========================================================================
+====================================================================canvas 画扇形================================================================================
+var context = document.getElementById('cvs').getContext('2d');
+   		context.beginPath();
+         // 画扇形的时候这步很重要,画笔不在圆心画出来的不是扇形
+        context.moveTo(24, 24);
+         // 跟上面的圆唯一的区别在这里,不画满圆,画个扇形
+        context.arc(24, 24, 24, Math.PI * 1.5, Math.PI * 1.5 * (50 / 100 + 1), false);
+        context.closePath();
+        context.fillStyle = '#ffd990';
+        context.fill();
+====================================================================canvas 画扇形================================================================================
+====================================================================a表情效果===================================================================================
+
+a:hover {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:link {
+    text-decoration: none;
+}
+a:active{text-decoration: none;}
+====================================================================a表情效果===================================================================================
+==================================================================js时间格式化====================================================================================
+ Date.prototype.Format = function(fmt) {
+     var o = {
+         "M+": this.getMonth() + 1, //月份   
+         "d+": this.getDate(), //日   
+         "h+": this.getHours(), //小时   
+         "m+": this.getMinutes(), //分   
+         "s+": this.getSeconds(), //秒   
+         "q+": Math.floor((this.getMonth() + 3) / 3), //季度   
+         "S": this.getMilliseconds() //毫秒   
+     };
+     if (/(y+)/.test(fmt))
+         fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+     for (var k in o)
+         if (new RegExp("(" + k + ")").test(fmt))
+             fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+     return fmt;
+ }
+var time11 = new Date().Format("yyyy-MM-dd hh:mm:ss")/*2015-11-11 10:51:41*/
+var time22 = new Date().Format("yyyy-MM-dd")/*2015-11-11*/
+==================================================================js时间格式化====================================================================================
+==================================================================画圆弧====================================================================================
+<canvas id="caibaojian" width="200" height="200"></canvas>
+var bg = document.getElementById('caibaojian');
+var ctx = bg.getContext('2d');
+ctx.beginPath();
+//在(100,100)处逆时针画一个半径为50，角度从0到180°的弧线
+//ctx.arc(100,100,50,0*Math.PI,1*Math.PI,true);
+//ctx.lineWidth=10;
+//ctx.strokeStyle='#00ff00';
+var grd = ctx.createLinearGradient(0,0,200,0);//从左到右
+grd.addColorStop(0,"#ff0000"); //起始颜色
+grd.addColorStop(1,"#00ff00"); //终点颜色
+//ctx.strokeStyle=grd;
+//ctx.stroke();
+//ctx.fillStyle='#00ff00';
+ctx.fillStyle=grd;
+//在(100,100)出逆时针画一个半径为50的实心圆
+//ctx.arc(100,100,50,0*Math.PI,2*Math.PI,true);
+//ctx.fill();
+//在(100,100)出顺时针画一个半径为50的3/4圆弧
+ctx.arc(100,100,50,0*Math.PI,1.5*Math.PI,false);
+ctx.stroke();
+==================================================================画圆弧====================================================================================
+==================================================================设置字体大小====================================================================================
+var fontSize = 20;
+var elm = document.documentElement;
+elm.style.fontSize = fontSize * (elm.clientWidth/320) + 'px';
+document.querySelector('html').style.fontSize=fontSize * (elm.clientWidth/320) + 'px';
+==================================================================设置字体大小====================================================================================
+==================================================================水平垂直居中=====================================================================================
+.page_inner{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);-o-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);}
+==================================================================水平垂直居中=====================================================================================
+=================================css半圆=====================================================================================
+width: 73px;
+	height: 36.5px;
+	background-color: #fff;
+	-webkit-border-radius: 0 0 36.5px 36.5px;
+	-moz-border-radius: 0 0 36.5px 36.5px;
+	-o-border-radius: 0 0 36.5px 36.5px;
+	border-radius: 0 0 36.5px 36.5px;
+
+下半圆如果要上半圆就修改border-radius顺序
+=================================css半圆=====================================================================================
+===================================webkit表单输入框placeholder的颜色值能改变么=================================================
+input::-webkit-input-placeholder{color:#AAAAAA;}
+input:focus::-webkit-input-placeholder{color:#EEEEEE;}
+===================================webkit表单输入框placeholder的颜色值能改变么=================================================
+==============================================判断设备=====================================================================
+/*设备判断*/
+    var explorer = navigator.userAgent;
+    var sUserAgent = navigator.userAgent.toLowerCase();
+    var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+    var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+    var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+    var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+    var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+    var bIsAndroid = sUserAgent.match(/android/i) == "android";
+    var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+    var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+    /*是不是微信判断*/
+    var isWeixin=false;
+    if(sUserAgent.indexOf('micromessenger')>-1){
+        isWeixin=true;
+    };
+    /*是不是微信判断*/
+    /*设备判断*/
+==============================================判断设备====================================
+==============================================禁用号码自动识别的办法：====================================
+在html中的<head></head>之间加上<meta name="format-detection" content="telephone=no" />
+==============================================禁用号码自动识别的办法：====================================
+===============================================淘宝样式重置=====================================
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%}address,cite,dfn,em,var{font-style:normal}code,kbd,pre,samp{font-family:couriernew,courier,monospace}small{font-size:12px}ul,ol{list-style:none}a{text-decoration:none}a:hover{text-decoration:none}a:visited{text-decoration:none}a:link{text-decoration:none}a:active{text-decoration:none}sup{vertical-align:text-top}sub{vertical-align:text-bottom}legend{color:#000}fieldset,img{border:0}button,input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}body{font-family:"Microsoft YaHei";line-height:1}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+}
+
+address,
+cite,
+dfn,
+em,
+var {
+    font-style: normal;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: couriernew, courier, monospace;
+}
+
+small {
+    font-size: 12px;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:link {
+    text-decoration: none;
+}
+a:active{text-decoration: none;}
+sup {
+    vertical-align: text-top;
+}
+
+sub {
+    vertical-align: text-bottom;
+}
+
+legend {
+    color: #000;
+}
+
+fieldset,
+img {
+    border: 0;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+body{font-family:"Microsoft YaHei";line-height:1;}
+
+==================================================css3 垂直居中============================================
+   display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+==================================================css3 垂直居中============================================
+==================================================正则表达式匹配手机号码===================================
+var tel="15558172171";
+var telReg = !!tel.match(/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/);//匹配手机号码-true/false
+==================================================正则表达式匹配手机号码===================================
+==================================================jsonp==ajax=================================================
+ $.ajax({
+                type: "get",
+                async: false,
+                url: "http://w.api.xiaoying.co/webapi2/rest/user/detail",
+                data: {
+                    "appkey": "30000000",
+                    "auid": "e1nv"
+                },
+                dataType: "jsonp",
+                jsonp: "callback",
+                jsonpCallback: "info_detail",
+                success: function(data) {
+                
+                },
+                error: function(error) {
+                    console.log('info_detail_fail');
+                }
+            });
+-----------------------------------------------------------------------------
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" /> 
+$.get('http://w.api.xiaoying.co/webapi2/rest/user/detail?callback=?', {
+    "appkey": "30000000",
+    "auid": "e1nv"
+}, function(data) {
+    console.log(data)
+}, 'jsonp');
+$.get('http://m.hecaifu.com//productClient//getProductList.shtml?callback=?', {
+    "productType": "1",
+    "mobile": "15558172171"
+}, function(data) {
+    console.log(data)
+}, 'jsonp');
+----------------------------------------------------------------------------------------------
+$.ajax({
+  method: "GET",
+  url: "http://w.api.xiaoying.co/webapi2/rest/video/projectlist",
+  data:{"appkey":"30000000","auid":"e1nv","format":"MP4"},
+  dataType: "jsonp",
+  jsonp: "callback",
+  jsonpCallback:"videocallback_list"
+}).done(function(data){
+	console.log(data.videolist);
+	var videoList=data.videolist;
+	$('.video_info_cover').attr('src',videoList[0].coverurl);
+
+}).error(function(err){
+
+});
+		
+			
+==================================================时间格式化===============================================
+/*time format*/
+Date.prototype.format = function(format){ 
+var o = { 
+"M+" : this.getMonth()+1, //month 
+"d+" : this.getDate(), //day 
+"h+" : this.getHours(), //hour 
+"m+" : this.getMinutes(), //minute 
+"s+" : this.getSeconds(), //second 
+"q+" : Math.floor((this.getMonth()+3)/3), //quarter 
+"S" : this.getMilliseconds() //millisecond 
+} 
+
+if(/(y+)/.test(format)) { 
+format = format.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length)); 
+} 
+
+for(var k in o) { 
+if(new RegExp("("+ k +")").test(format)) { 
+format = format.replace(RegExp.$1, RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length)); 
+} 
+} 
+return format; 
+} //使用方法 
+var now = new Date(); 
+
+var nowStr = now.format("yyyy-MM-dd hh:mm:ss"); 
+//使用方法2: 
+var testDate = new Date(); 
+var testStr = testDate.format("YYYY年MM月dd日hh小时mm分ss秒"); 
+alert(testStr); 
+//示例： 
+alert(new Date().Format("yyyy年MM月dd日")); 
+alert(new Date().Format("MM/dd/yyyy")); 
+alert(new Date().Format("yyyyMMdd")); 
+alert(new Date().Format("yyyy-MM-dd hh:mm:ss"));
+	/*time format*/
+
+==================================================时间格式化=============================================
+===================================================html5 移动端视频播放不自动全屏播放===================
+HTML里video必须加上webkit-playsinline属性
+<video id="player" width="480" height="320" webkit-playsinline>
+===================================================html5 移动端视频播放不自动全屏播放===================
+====================================================js获取url信息=======================================
+alert(window.location.pathname)
+设置或获取整个 URL 为字符串。
+alert(window.location.href);
+设置或获取与 URL 关联的端口号码。
+alert(window.location.port)
+设置或获取 URL 的协议部分。
+alert(window.location.protocol)
+设置或获取 href 属性中在井号“#”后面的分段。
+alert(window.location.hash)
+设置或获取 location 或 URL 的 hostname 和 port 号码。
+alert(window.location.host)
+设置或获取 href 属性中跟在问号后面的部分。
+alert(window.location.search)
+获取变量的值(截取等号后面的部分)
+    var url = window.location.search;
+//    alert(url.length);
+//    alert(url.lastIndexOf('='));
+    var loc = url.substring(url.lastIndexOf('=')+1, url.length);
+====================================================js获取url信息=======================================
+====================================================  小影pc app store 下载链接=======================================
+https://itunes.apple.com/cn/app/xiao-ying/id738897668?mt=8
+====================================================  小影pc app store 下载链接=======================================
+===================================================文字替换=============================================
+/*文字替换*/
+        var textreplace=function (){
+            var re0=/未来/;
+            var re1=/&lt/;// "<"
+            var re2=/&gt/;//">"
+            var re3=/&quot/;//"\""
+            var re4=/&apos/;//"'"
+            var re5=/&amp/;//"&"
+            var re6=/&&#39/;// "'"
+           for(var i=0;i<$('.replacetext').length;i++){
+                //$($('.replacetext')[i]).text($($('.replacetext')[i]).text().replace(re0,'未来1'));
+                $($('.replacetext')[i]).text($($('.replacetext')[i]).text().replace(re1,'<'));
+                $($('.replacetext')[i]).text($($('.replacetext')[i]).text().replace(re2,'>'));
+                $($('.replacetext')[i]).text($($('.replacetext')[i]).text().replace(re3,'\\'));
+                $($('.replacetext')[i]).text($($('.replacetext')[i]).text().replace(re4,'\''));
+                $($('.replacetext')[i]).text($($('.replacetext')[i]).text().replace(re5,'&'));
+                $($('.replacetext')[i]).text($($('.replacetext')[i]).text().replace(re6,'\''));
+            }; 
+        }
+            
+            /*文字替换*/
+===================================================文字替换=============================================
+===================================================横竖屏处理=============================================
+// 判断屏幕是否旋转
+function hengshuping() {
+    if (window.orientation == 180 || window.orientation == 0) {
+        //竖屏
+         location.reload(false); 
+        // $(function() {
+        //     var spwidth = $(window).width();
+        //     $('.video_part').height(spwidth);
+        //     $('.main,.videomoreul').css({
+        //         'width': spwidth
+        //     });
+        // });
+    }
+    if (window.orientation == 90 || window.orientation == -90) {
+        //横屏
+         location.reload(false); 
+        // $(function() {
+        //     $('.main').css({
+        //         'width': '19rem'
+        //     });
+        // });
+
+    }
+}
+window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", hengshuping, false);
+//判断手机横竖屏状态
+===================================================横竖屏处理=============================================
+===================================================移动端手机可视区域=============================================
+iphone 6plus 屏幕高度736实际可视的游览器可是高度是626 
+iphone 6 屏幕高度667实际可视的游览器可是高度是557(qq)603(微信)559（safari）
+===================================================移动端手机可视区域=============================================
+====================================================ajax form  submit==============================================
+html 中的form表单结构还是正常结构，form和submit按钮
+$('#myform').on('submit', function() {
+        $('#myform').ajaxSubmit({
+            type: 'post', // 提交方式 get/post
+            url: 'Insert.php?action=post', // 需要提交的 url
+            data: $('#myform').serialize(),
+            success: function(data) { // data 保存提交后返回的数据，一般为 json 数据
+            },
+            error: function(xhr, errorStatus, errorText) {
+                alert(errorText);
+            }
+        });
+        return false; // 阻止表单自动提交事件
+    });
+====================================================ajax form  submit==============================================
+============================================canvas==================================================================
+/*canvas*/
+    var context=document.getElementById("canvas").getContext("2d");
+    context.beginPath();
+    context.moveTo(50,5);
+    context.lineTo(40,40);
+    context.lineTo(300,40);
+    context.lineTo(290,5);
+    context.fillStyle="#f53060";
+    context.fill();
+    context.closePath();
+    context.lineWidth=1;
+    context.strokeStyle = "#f53060"; 
+    context.stroke();
+    context.beginPath();
+    context.font = "bold 18px 微软雅黑";
+    context.fillStyle = "#fff";
+    context.fillText("活动时间:截止到7月30日", 70, 27);
+
+				/*5*/
+	context.beginPath();
+	context.moveTo(690,546); 
+	//context.quadraticCurveTo(690,658,842,767); 
+	context.bezierCurveTo(690,658,764,721,842,767);
+	context.lineWidth=2;
+	context.strokeStyle = "#a5ddeb"; 
+	context.stroke();
+		/*5*/
+    /*canvas*/
+============================================canvas==================================================================
+============================================compass 编译输出风格=====================================================
+SASS提供四个编译风格的选项：
+
+* nested：嵌套缩进的css代码，它是默认值。
+
+* expanded：没有缩进的、扩展的css代码。
+
+* compact：简洁格式的css代码。
+
+* compressed：压缩后的css代码。
+============================================compass 编译输出风格=====================================================
+============================================compass sprite==================================================================
+@import "compass/utilities/sprites";
+$icons-layout: horizontal;
+@import "../img/icons/*.png"; 
+// $<map>-layout: diagonal; 
+@include all-icons-sprites;
+先引入模块，设置水平展示，引入所有图片，输出所有类
+只要给样式添加一个图片名称的类就可以用了
+============================================compass sprite==================================================================
+=============================================谷歌字体库=====================================================================
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Century Gothic" >
+	<!-- 如果你想一次行载入多个字体
+	http://fonts.googleapis.com/css?family=Vollkorn|Yanone|Droid+Sans -->
+=============================================谷歌字体库=====================================================================
+=============================================稳定、快速、免费的开源项目 CDN 服务============================================
+百度CDN：http://developer.baidu.com/wiki/index.php?title=docs/cplat/libs
+
+jquery cdn:
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+bootstrap
+<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+
+BootCDN稳定、快速、免费的开源项目 CDN 服务：http://www.bootcdn.cn/
+=============================================BootCDN稳定、快速、免费的开源项目 CDN 服务============================================
+=============================================1:1 禁止缩放============================================
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+<meta name="viewport content="user-scalable=no""
+=============================================1:1 禁止缩放============================================
+=============================================reset=========reset=========reset==========================
+
+/* reset */
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0;}
+header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
+table{border-collapse:collapse;border-spacing:0;}
+caption,th{text-align:left;font-weight:normal;}
+html,body,fieldset,img,iframe,abbr{border:0;}
+i,cite,em,var,address,dfn{font-style:normal;}
+li{list-style:none;}
+img{border:none;}
+h1,h2,h3,h4,h5,h6,small{font-size:100%;}
+textarea{overflow:auto;resize:none;}
+body{font-family:"Microsoft Yahei",Arial,"宋体";font-size: 14px;}
+a{text-decoration: none;}		
+======================================================reset========reset==============================================================================
+body{width: 100%;height: 100%;margin: 0;padding: 0;font: 12px/1.5 "Helvetica Neue", Helvetica, STHeiTi, sans-serif,Microsoft YaHei;}
+============================================================================================================================================
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+
+<meta http-equiv = "X-UA-Compatible" content = "IE=edge,chrome=1" />
+1 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />  
+ 
+2 <meta content="yes" name="apple-mobile-web-app-capable" />  
+ 
+3 <meta content="black" name="apple-mobile-web-app-status-bar-style" />  
+ 
+4 <meta content="telephone=no" name="format-detection" />  
+第一个meta标签表示：强制让文档的宽度与设备的宽度保持1:1，并且文档最大的宽度比例是1.0，且不允许用户点击屏幕放大浏览；
+
+第二个meta标签是iphone设备中的safari私有meta标签，它表示：允许全屏模式浏览；
+
+第三个meta标签也是iphone的私有标签，它指定的iphone中safari顶端的状态条的样式；
+
+第四个meta标签表示：告诉设备忽略将页面中的数字识别为电话号码
+
+<meta content="email=no" name="format-detection" /> 如果你不想Android自动识别页面中的邮件地址，你不妨加上这样一句meta标签在head中
+============================================================================================================================================
+引入require.js
+<script data-main="js/main" src="js/require.js" defer async="true"></script>-----async属性表明这个文件需要异步加载，避免网页失去响应。
+script标签上了多了一个自定义属性：data-main="main"，等号右边的main指的main.js。当然可以使用任意的名称。这个main指主模块或入口模块
+require.config({
+	paths:{
+		jquery:'jquery',
+		pro:'pro1'
+	}
+
+});
+require(['jquery'],function(jquery){
+	require(['pro'],function(pro){
+		$('.div1').click(function(){
+			pro.ff2();
+		})
+	})
+})
+
+define(function(){
+	var fn1=function(){
+		alert(123);
+	}
+	var fn2=function(){
+		alert($(this));
+	}
+	return{
+		ff1:fn1,
+		ff2:fn2
+	}
+})
+============================================================================================================================================
+backface-visibility 属性定义当元素不面向屏幕时是否可见。
+div
+{
+backface-visibility:hidden;
+-webkit-backface-visibility:hidden; /* Chrome and Safari */
+-moz-backface-visibility:hidden; /* Firefox */
+-ms-backface-visibility:hidden; /* Internet Explorer */
+-o-backface-visibility:hidden; /*opera*/
+} 
+================================================================================================================================================
+   @font-face {
+	font-family: 'YourWebFontName';
+	src: url('YourWebFontName.eot'); /* IE9 Compat Modes */
+	src: url('YourWebFontName.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+             url('YourWebFontName.woff') format('woff'), /* Modern Browsers */
+             url('YourWebFontName.ttf')  format('truetype'), /* Safari, Android, iOS */
+             url('YourWebFontName.svg#YourWebFontName') format('svg'); /* Legacy iOS */
+   }
+===============================================================================================================================================
+
+@media screen and ( min-width: 212px){/*213px显示屏样式 LG Optimus One*/}
+@media screen and ( min-width: 319px){/*320px显示屏样式 苹果4/4S/5C/5S黑莓Z30 */}
+@media screen and ( min-width: 359px){/*360px显示屏样式 索尼Z1*/}
+@media screen and ( min-width: 383px){/*384px显示屏样式 黑莓Z10 谷歌 Nexus 6 LG Optimus G*/}
+@media screen and ( min-width: 399px){/*399px显示屏样式 三星galaxyNote*/}
+@media screen and ( min-width: 414px){/*414px显示屏样式 苹果6plus*/}
+@media screen and ( min-width: 423px){/*424px显示屏样式 LG 4X */}
+@media screen and ( min-width: 479px){/*480px显示屏样式 索尼MT27i Xperia sola*/}
+@media screen and ( min-width: 539px){/*640px显示屏样式 摩托罗拉Droid3/4/Razr Atrix 4g*/}
+@media screen and ( min-width: 639px){/*640px显示屏样式*/}
+@media screen and ( min-width: 640px){/*640px以上显示屏样式*/}
+iphone5--html的默认font-size:12px;
+iphone6--html的默认font-size:16px;
+4.7寸的屏幕样式宽度是375----》iphone6
+5.7寸的屏幕样式宽度是414----》6 plus
+宽度用百分比，高度用rem？
+
+===============================================================================================================================================
+判断游览器，游览器内核
+var isChrome = navigator.userAgent.toLowerCase().match(/chrome/);
+var isWebkit = navigator.userAgent.toLowerCase().match(/webkit/);
+var isff = navigator.userAgent.toLowerCase().match(/moz/);
+
+<script>
+	var sUserAgent = navigator.userAgent.toLowerCase();
+	var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+	var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+	var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+	var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+	var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+	var bIsAndroid = sUserAgent.match(/android/i) == "android";
+	var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+	var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+	if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid
+			|| bIsCE || bIsWM) {
+		document.location.href = "http://m.xiaoying.tv";
+	}
+</script>
+小影下载地址（优化过的安卓和ios都是这个地址）：
+window.location = "http://xiaoying.tv/d/a"
+===============================================================================================================================================
+======================================================移动端的屏幕尺寸统计=========================================================================================
+ipad  高度：241.2 毫米（9.50 英寸）宽度：185.7 毫米（7.31 英寸） 屏幕宽度折算成像素为：（7.31*414）/5.5=550.2436363636364px
+iPhone6 Plus  配备5.5 英寸屏幕 分辨率为1334*750                  屏幕宽度折算成像素为：417*736
+iPhone 6采用了4.7英寸的屏幕  分辨率则达到了1920*1080		 屏幕宽度折算成像素为：375*667
+IPhone5：4英寸    屏幕宽度折算成像素为：320*568
+IPhone4S：3.5英寸  屏幕宽度折算成像素为：320*480
+IPhone4：3.5英寸  屏幕宽度折算成像素为：320*480
+======================================================移动端的屏幕尺寸统计=========================================================================================
+======================================================CSS3 动画=========================================================================================
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+
+  40%, 43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    -webkit-transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    -webkit-transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0,-4px,0);
+    transform: translate3d(0,-4px,0);
+  }
+}
+.bounce {
+  -webkit-animation-name:bounce;
+  animation-name:bounce;
+  -webkit-transform-origin:center bottom;
+  -webkit-animation-duration:4s;/*定义过渡的时间，默认是0*/
+  transition-timing-function:/*定义过渡动画的缓动效果，如淡入、淡出等，默认是 ease*/
+  transition-delay:/*规定过渡效果的延迟时间，即在过了这个时间后才开始动画，默认是0*/
+  animation-delay:3s;
+  transform-origin:center bottom;
+  animation-iteration-count:infinite;/*动画次数*/
+  -webkit-animation-iteration-count:infinite;
+}
+
+======================================================CSS3 动画=========================================================================================
+======================================================CSS3背景渐变=========================================================================================
+   header {
+        width: 100%;
+        background-color: #ff6532;
+        background-image: -webkit-linear-gradient(0deg, #f74f38, #ff6532);
+        background-image: -ms-linear-gradient(0deg, #f74f38, #ff6532);
+        background-image: linear-gradient(0deg, #f74f38, #ff6532);
+        background-size: 100% 100%;
+        background-position: 0 0;
+        background-repeat: no-repeat
+    }
+======================================================CSS3背景渐变=========================================================================================
+======================================================邮件链接=========================================================================================
+<a class="llb" href="mailto:support@xiaoying.tv">support@xiaoying.tv</a>
+======================================================邮件链接========================================================================================
+======================================================关闭按钮========================================================================================
+// 关闭按钮
+.close{.po();right:0.5rem;top:0.5rem;cursor: pointer;z-index: 5;}
+.close,.closeinner{.wh(1.1rem,1.1rem);}
+.closeinner{position: relative;-webkit-transform:rotate(45deg);transform:rotate(45deg);-o-transform:rotate(45deg);-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);}
+.heng{.wh(1rem,0.2rem);.po();left:50%;top:50%;margin-left:-0.5rem;margin-top:-0.1rem;.ba(#747c92);border-radius: 0.5rem}
+.shu{.wh(0.2rem,1rem);.po();left:50%;top:50%;margin-left:-0.1rem;margin-top:-0.5rem;.ba(#747c92);border-radius: 0.5rem}
+// 关闭按钮
+======================================================关闭按钮========================================================================================
+======================================================提示用户是不是安装了app介绍app简介还有打开按钮========================================================================================
+<meta name='apple-itunes-app' content='app-id=738897668'>
+======================================================提示用户是不是安装了app介绍app简介还有打开按钮========================================================================================
+========================================================原生JavaScript实现=========================================================
+1、原生JavaScript实现字符串长度截取
+function cutstr(str, len) {
+    var temp;
+    var icount = 0;
+    var patrn = /[^\x00-\xff]/;
+    var strre = "";
+    for (var i = 0; i < str.length; i++) {
+        if (icount < len - 1) {
+            temp = str.substr(i, 1);
+            if (patrn.exec(temp) == null) {
+                icount = icount + 1
+            } else {
+                icount = icount + 2
+            }
+            strre += temp        
+        } else {
+            break
+        }
+    }
+    return strre + "..."
+}
+
+2、原生JavaScript获取域名主机
+function getHost(url) {
+    var host = "null";
+    if(typeof url == "undefined"|| null == url) {
+        url = window.location.href;
+    }
+    var regex = /^\w+\:\/\/([^\/]*).*/;
+    var match = url.match(regex);
+    if(typeof match != "undefined" && null != match) {
+        host = match[1];
+    }
+    return host;
+}
+
+3、原生JavaScript清除空格
+String.prototype.trim = function() {
+    var reExtraSpace = /^\s*(.*?)\s+$/;
+    return this.replace(reExtraSpace, "$1")
+}
+
+4、原生JavaScript替换全部
+String.prototype.replaceAll = function(s1, s2) {
+    return this.replace(new RegExp(s1, "gm"), s2)
+}
+
+5、原生JavaScript转义html标签
+function HtmlEncode(text) {
+    return text.replace(/&/g, '&amp').replace(/\"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+}
+
+6、原生JavaScript还原html标签
+function HtmlDecode(text) {
+    return text.replace(/&amp;/g, '&').replace(/&quot;/g, '\"').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+}
+
+7、原生JavaScript时间日期格式转换
+Date.prototype.Format = function(formatStr) {
+    var str = formatStr;
+    var Week = ['日', '一', '二', '三', '四', '五', '六'];
+    str = str.replace(/yyyy|YYYY/, this.getFullYear());
+    str = str.replace(/yy|YY/, (this.getYear() % 100) > 9 ? (this.getYear() % 100).toString() : '0' + (this.getYear() % 100));
+    str = str.replace(/MM/, (this.getMonth() + 1) > 9 ? (this.getMonth() + 1).toString() : '0' + (this.getMonth() + 1));
+    str = str.replace(/M/g, (this.getMonth() + 1));
+    str = str.replace(/w|W/g, Week[this.getDay()]);
+    str = str.replace(/dd|DD/, this.getDate() > 9 ? this.getDate().toString() : '0' + this.getDate());
+    str = str.replace(/d|D/g, this.getDate());
+    str = str.replace(/hh|HH/, this.getHours() > 9 ? this.getHours().toString() : '0' + this.getHours());
+    str = str.replace(/h|H/g, this.getHours());
+    str = str.replace(/mm/, this.getMinutes() > 9 ? this.getMinutes().toString() : '0' + this.getMinutes());
+    str = str.replace(/m/g, this.getMinutes());
+    str = str.replace(/ss|SS/, this.getSeconds() > 9 ? this.getSeconds().toString() : '0' + this.getSeconds());
+    str = str.replace(/s|S/g, this.getSeconds());
+    return str
+}
+
+8、原生JavaScript判断是否为数字类型
+function isDigit(value) {
+    var patrn = /^[0-9]*$/;
+    if (patrn.exec(value) == null || value == "") {
+        return false
+    } else {
+        return true
+    }
+}
+
+9、原生JavaScript设置cookie值
+function setCookie(name, value, Hours) {
+    var d = new Date();
+    var offset = 8;
+    var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+    var nd = utc + (3600000 * offset);
+    var exp = new Date(nd);
+    exp.setTime(exp.getTime() + Hours * 60 * 60 * 1000);
+    document.cookie = name + "=" + escape(value) + ";path=/;expires=" + exp.toGMTString() + ";domain=x.com;"
+}
+
+10、原生JavaScript获取cookie值
+function getCookie(name) {
+    var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+    if (arr != null) return unescape(arr[2]);
+    return null
+}
+========================================================原生JavaScript实现=========================================================
+======================================================JS获取浏览器窗口大小 获取屏幕，浏览器，网页高度宽度==========================
+var documentHeight=document.body.scrollHeight;//1041 差不多是网页的高度-文档的高度
+var clientHeight = document.documentElement.clientHeight;//567 可视区域的高度
+var windowWidth=$(window).width();
+var windowHeight=$(window).height();//567 可视区域的高度
+var h1=$(document).height(); //1041 差不多是网页的高度-文档的高度
+var h2=$(document.body).height();  //1040.921875 差不多是网页的高度-文档的高度 有小数点
+
+网页可见区域宽：document.body.clientWidth 
+网页可见区域高：document.body.clientHeight 
+网页可见区域宽：document.body.offsetWidth (包括边线的宽) 
+网页可见区域高：document.body.offsetHeight (包括边线的宽) 
+网页正文全文宽：document.body.scrollWidth 
+网页正文全文高：document.body.scrollHeight 
+网页被卷去的高：document.body.scrollTop 
+网页被卷去的左：document.body.scrollLeft 
+网页正文部分上：window.screenTop 
+网页正文部分左：window.screenLeft 
+屏幕分辨率的高：window.screen.height 
+屏幕分辨率的宽：window.screen.width 
+屏幕可用工作区高度：window.screen.availHeight 
+屏幕可用工作区宽度：window.screen.availWidth 
+
+
+HTML精确定位:scrollLeft,scrollWidth,clientWidth,offsetWidth 
+scrollHeight: 获取对象的滚动高度。 
+scrollLeft:设置或获取位于对象左边界和窗口中目前可见内容的最左端之间的距离 
+scrollTop:设置或获取位于对象最顶端和窗口中可见内容的最顶端之间的距离 
+scrollWidth:获取对象的滚动宽度 
+offsetHeight:获取对象相对于版面或由父坐标 offsetParent 属性指定的父坐标的高度 
+offsetLeft:获取对象相对于版面或由 offsetParent 属性指定的父坐标的计算左侧位置 
+offsetTop:获取对象相对于版面或由 offsetTop 属性指定的父坐标的计算顶端位置 
+event.clientX 相对文档的水平座标 
+event.clientY 相对文档的垂直座标 
+event.offsetX 相对容器的水平坐标 
+event.offsetY 相对容器的垂直坐标 
+document.documentElement.scrollTop 垂直方向滚动的值 
+event.clientX+document.documentElement.scrollTop 相对文档的水平座标+垂直方向滚动的量 
+======================================================JS获取浏览器窗口大小 获取屏幕，浏览器，网页高度宽度==========================
+===================================================================　css3 loading 转圆圈========================================================================
+<!-- loading -->
+    <div class="loading">
+        <div class="sk-circle">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+      </div>
+    </div>
+    <!-- loading -->
+
+/*loading*/
+
+.loading {
+	position:fixed;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	-webkit-transform:translate(-50%,-50%);
+	z-index:2;
+	@include none();
+}
+
+.sk-circle {
+   
+    width: 5rem;
+    height: 5rem;
+    position: relative;
+}
+
+.sk-circle .sk-child {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.sk-circle .sk-child:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 15%;
+    height: 15%;
+    background-color: rgba(0,0,0,0.45);
+    border-radius: 100%;
+    -webkit-animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
+    animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
+}
+
+.sk-circle .sk-circle2 {
+    -webkit-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    transform: rotate(30deg);
+}
+
+.sk-circle .sk-circle3 {
+    -webkit-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    transform: rotate(60deg);
+}
+
+.sk-circle .sk-circle4 {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.sk-circle .sk-circle5 {
+    -webkit-transform: rotate(120deg);
+    -ms-transform: rotate(120deg);
+    transform: rotate(120deg);
+}
+
+.sk-circle .sk-circle6 {
+    -webkit-transform: rotate(150deg);
+    -ms-transform: rotate(150deg);
+    transform: rotate(150deg);
+}
+
+.sk-circle .sk-circle7 {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.sk-circle .sk-circle8 {
+    -webkit-transform: rotate(210deg);
+    -ms-transform: rotate(210deg);
+    transform: rotate(210deg);
+}
+
+.sk-circle .sk-circle9 {
+    -webkit-transform: rotate(240deg);
+    -ms-transform: rotate(240deg);
+    transform: rotate(240deg);
+}
+
+.sk-circle .sk-circle10 {
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+.sk-circle .sk-circle11 {
+    -webkit-transform: rotate(300deg);
+    -ms-transform: rotate(300deg);
+    transform: rotate(300deg);
+}
+
+.sk-circle .sk-circle12 {
+    -webkit-transform: rotate(330deg);
+    -ms-transform: rotate(330deg);
+    transform: rotate(330deg);
+}
+
+.sk-circle .sk-circle2:before {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+}
+
+.sk-circle .sk-circle3:before {
+    -webkit-animation-delay: -1s;
+    animation-delay: -1s;
+}
+
+.sk-circle .sk-circle4:before {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+}
+
+.sk-circle .sk-circle5:before {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+}
+
+.sk-circle .sk-circle6:before {
+    -webkit-animation-delay: -0.7s;
+    animation-delay: -0.7s;
+}
+
+.sk-circle .sk-circle7:before {
+    -webkit-animation-delay: -0.6s;
+    animation-delay: -0.6s;
+}
+
+.sk-circle .sk-circle8:before {
+    -webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+}
+
+.sk-circle .sk-circle9:before {
+    -webkit-animation-delay: -0.4s;
+    animation-delay: -0.4s;
+}
+
+.sk-circle .sk-circle10:before {
+    -webkit-animation-delay: -0.3s;
+    animation-delay: -0.3s;
+}
+
+.sk-circle .sk-circle11:before {
+    -webkit-animation-delay: -0.2s;
+    animation-delay: -0.2s;
+}
+
+.sk-circle .sk-circle12:before {
+    -webkit-animation-delay: -0.1s;
+    animation-delay: -0.1s;
+}
+
+@-webkit-keyframes sk-circleBounceDelay {
+    0%,
+    80%,
+    100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    40% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes sk-circleBounceDelay {
+    0%,
+    80%,
+    100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    40% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+
+/*loading*/
+===================================================================　css3 loading 转圆圈========================================================================
+===================================================================placeholder 颜色设置========================================================================
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #fff;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: #fff;
+}
+
+input::-o-placeholder,
+textarea::-o-placeholder {
+    color: #fff;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #fff;
+}
+===================================================================placeholder 颜色设置========================================================================
+==========================================================================================移动端web开发技巧==========================================================================================
+移动端web开发技巧
+热度 17已有 1451 次阅读2015-11-24 14:14 |系统分类:HTML/CSS
+移动端web开发技巧
+META相关
+
+1. 添加到主屏后的标题（IOS）
+<meta name="apple-mobile-web-app-title" content="标题"> 
+
+2. 启用 WebApp 全屏模式（IOS）
+
+<meta name="apple-mobile-web-app-capable" content="yes" /> 
+<meta name="apple-touch-fullscreen" content="yes" /> 
+
+3. 百度禁止转码
+通过百度手机打开网页时，百度可能会对你的网页进行转码，往你页面贴上它的广告，非常之恶心。不过我们可以通过这个meta标签来禁止它：
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+4. 设置状态栏的背景颜色（IOS）
+
+设置状态栏的背景颜色，只有在 "apple-mobile-web-app-capable" content="yes" 时生效
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> 
+
+default ：状态栏背景是白色。
+black ：状态栏背景是黑色。
+black-translucent ：状态栏背景是半透明。 如果设置为 default 或 black ,网页内容从状态栏底部开始。 如果设置为 black-translucent ,网页内容充满整个屏幕，顶部会被状态栏遮挡。
+
+5. 移动端手机号码识别（IOS）
+
+在 iOS Safari （其他浏览器和Android均不会）上会对那些看起来像是电话号码的数字处理为电话链接，比如：
+7位数字，形如：1234567
+带括号及加号的数字，形如：(+86)123456789
+双连接线的数字，形如：00-00-00111
+11位数字，形如：13800138000
+可能还有其他类型的数字也会被识别。我们可以通过如下的meta来关闭电话号码的自动识别：
+<meta name="format-detection" content="telephone=no" />
+
+6.开启短信功能：<a href="sms:123456">123456</a> 
+
+7. 移动端邮箱识别（Android）
+
+与电话号码的识别一样，在安卓上会对符合邮箱格式的字符串进行识别，我们可以通过如下的meta来管别邮箱的自动识别：
+<meta content="email=no" name="format-detection" /> 
+
+同样地，我们也可以通过标签属性来开启长按邮箱地址弹出邮件发送的功能：
+<a mailto:dooyoe@gmail.com">dooyoe@gmail.com</a>
+
+8. 优先使用最新版本 IE 和 Chrome
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+9.viewport模板
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<title>标题</title>
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+这里开始内容
+</body>
+</html>
+
+三大手机系统的字体：
+    ios 系统
+        默认中文字体是Heiti SC
+        默认英文字体是Helvetica
+        默认数字字体是HelveticaNeue
+        无微软雅黑字体        
+
+    android 系统
+        默认中文字体是Droidsansfallback
+        默认英文和数字字体是Droid Sans
+        无微软雅黑字体
+
+   winphone 系统
+默认中文字体是Dengxian(方正等线体)
+默认英文和数字字体是Segoe
+无微软雅黑字体
+各个手机系统有自己的默认字体，且都不支持微软雅黑
+如无特殊需求，手机端无需定义中文字体，使用系统默认
+英文字体和数字字体可使用 Helvetica ，三种系统都支持
+
+2、移动端字体单位font-size选择px还是rem
+对于只需要适配手机设备，使用px即可
+对于需要适配各种移动设备，使用rem，例如只需要适配iPhone和iPad等分辨率差别比较挺大的设备
+rem配置参考：
+html {font-size:10px}
+@media screen and (min-width:480px) and (max-width:639px) {
+    html {
+        font-size: 15px
+    }
+}
+@media screen and (min-width:640px) and (max-width:719px) {
+    html {
+        font-size: 20px
+    }
+}
+@media screen and (min-width:720px) and (max-width:749px) {
+    html {
+        font-size: 22.5px
+    }
+}
+@media screen and (min-width:750px) and (max-width:799px) {
+    html {
+        font-size: 23.5px
+    }
+}
+@media screen and (min-width:800px) and (max-width:959px) {
+    html {
+        font-size: 25px
+    }
+}
+@media screen and (min-width:960px) and (max-width:1079px) {
+    html {
+        font-size: 30px
+    }
+}
+@media screen and (min-width:1080px) {
+    html {
+        font-size: 32px
+    }
+}
+
+3、移动端touch事件(区分webkit 和 winphone)
+当用户手指放在移动设备在屏幕上滑动会触发的touch事件
+以下支持webkit
+touchstart——当手指触碰屏幕时候发生。不管当前有多少只手指
+touchmove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用event的preventDefault()可以阻止默认情况的发生：阻止页面滚动
+touchend——当手指离开屏幕时触发
+touchcancel——系统停止跟踪触摸时候会触发。例如在触摸过程中突然页面alert()一个提示框，此时会触发该事件，这个事件比较少用
+以下支持winphone 8
+MSPointerDown——当手指触碰屏幕时候发生。不管当前有多少只手指
+MSPointerMove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用css的html{-ms-touch-action: none;}可以阻止默认情况的发生：阻止页面滚动
+MSPointerUp——当手指离开屏幕时触发
+
+4、移动端click屏幕产生200-300 ms的延迟响应
+移动设备上的web网页是有300ms延迟的，玩玩会造成按钮点击延迟甚至是点击失效。
+
+解决延迟方案：
+fastclick可以解决在手机上点击事件的300ms延迟
+zepto的touch模块，tap事件也是为了解决在click的延迟问题
+触摸事件的响应顺序
+1、ontouchstart 
+2、ontouchmove 
+3、ontouchend 
+4、onclick
+解决300ms延迟的问题，也可以通过绑定ontouchstart事件，加快对事件的响应
+
+在高清显示屏中的位图被放大，图片会变得模糊，因此移动端的视觉稿通常会设计为传统PC的2倍
+那么，前端的应对方案是：
+设计稿切出来的图片长宽保证为偶数，并使用backgroud-size把图片缩小为原来的1/2
+其它元素的取值为原来的1/2，例如视觉稿40px的字体，使用样式的写法为20px
+
+6、ios系统中元素被触摸时产生的半透明灰色遮罩怎么去掉
+ios用户点击一个链接，会出现一个半透明灰色遮罩, 如果想要禁用，可设置-webkit-tap-highlight-color的alpha值为0，也就是属性值的最后一位设置为0就可以去除半透明灰色遮罩
+a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0)}
+
+7、部分android系统中元素被点击时产生的边框怎么去掉
+android用户点击一个链接，会出现一个边框或者半透明灰色遮罩, 不同生产商定义出来额效果不一样，可设置-webkit-tap-highlight-color的alpha值为0去除部分机器自带的效果
+a,button,input,textarea{
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+    -webkit-user-modify:read-write-plaintext-only; 
+}
+-webkit-user-modify有个副作用，就是输入法不再能够输入多个字符
+另外，有些机型去除不了，如小米2
+对于按钮类还有个办法，不使用a或者input标签，直接用div标签
+
+8、winphone系统a、input标签被点击时产生的半透明灰色背景怎么去掉
+<meta name="msapplication-tap-highlight" content="no">
+
+9、webkit表单元素的默认外观怎么重置
+.css{-webkit-appearance:none;}
+
+10、webkit表单输入框placeholder的颜色值能改变么
+input::-webkit-input-placeholder{color:#AAAAAA;}
+input:focus::-webkit-input-placeholder{color:#EEEEEE;}
+
+11、webkit表单输入框placeholder的文字能换行么
+ios可以，android不行~
+
+14. 禁止文本缩放
+当移动设备横竖屏切换时，文本的大小会重新计算，进行相应的缩放，当我们不需要这种情况时，可以选择禁止：
+html {
+　　        -webkit-text-size-adjust: 100%;
+}
+需要注意的是，PC端的该属性已经被移除，该属性在移动端要生效，必须设置 `meta viewport’。
+
+15. 移动端如何清除输入框内阴影
+在iOS上，输入框默认有内部阴影，但无法使用 box-shadow 来清除，如果不需要阴影，可以这样关闭：
+input,
+textarea {
+　　border: 0; /* 方法1 */
+　　-webkit-appearance: none; /* 方法2 */
+}
+
+17. 移动端禁止选中内容
+如果你不想用户可以选中页面中的内容，那么你可以在css中禁掉：
+.user-select-none {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all （移动端不需要） */
+  -ms-user-select: none;      /* IE 10+ */      
+}
+
+18. 移动端取消touch高亮效果
+在做移动端页面时，会发现所有a标签在触发点击时或者所有设置了伪类 :active 的元素，默认都会在激活状态时，显示高亮框，如果不想要这个高亮，那么你可以通过css以下方法来进行全局的禁止：
+html {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+但这个方法在三星的机子上无效，有一种妥协的方法是把页面非真实跳转链接的a标签换成其它标签，可以解决这个问题。
+
+21.屏幕旋转的事件和样式
+事件
+window.orientation，取值：正负90表示横屏模式、0和180表现为竖屏模式；
+window.onorientationchange = function(){
+            switch(window.orientation){
+                case -90:
+                case 90:
+                alert("横屏:" + window.orientation);
+                case 0:
+                case 180:
+                alert("竖屏:" + window.orientation);
+                break;
+            }
+} 
+样式
+//竖屏时使用的样式
+@media all and (orientation:portrait) {
+    .css{}
+}
+
+//横屏时使用的样式
+@media all and (orientation:landscape) {
+    .css{}
+}
+
+22.audio元素和video元素在ios和andriod中无法自动播放
+应对方案：触屏即播
+$('html').one('touchstart',function(){
+    audio.play()
+})
+
+24.手机拍照和上传图片
+<input type="file">的accept 属性
+<!-- 选择照片 -->
+<input type=file accept="image/*">
+<!-- 选择视频 -->
+<input type=file accept="video/*">
+
+ios 有拍照、录像、选取本地图片功能
+部分android只有选取本地图片功能
+winphone不支持
+input控件默认外观丑陋
+
+25. 消除transition闪屏
+.css{
+    /*设置内嵌的元素在 3D 空间如何呈现：保留 3D*/
+    -webkit-transform-style: preserve-3d;
+    /*（设置进行转换的元素的背面在面对用户时是否可见：隐藏）*/
+    -webkit-backface-visibility: hidden;
+}
+
+开启硬件加速
+解决页面闪白
+保证动画流畅
+  .css {
+     -webkit-transform: translate3d(0, 0, 0);
+     -moz-transform: translate3d(0, 0, 0);
+     -ms-transform: translate3d(0, 0, 0);
+     transform: translate3d(0, 0, 0);
+  }
+设计高性能CSS3动画的几个要素
+尽可能地使用合成属性transform和opacity来设计CSS3动画，
+不使用position的left和top来定位
+利用translate3D开启GPU加速
+
+框架
+1. 移动端基础框架
+zepto.js 语法与jquery几乎一样，会jquery基本会zepto~
+iscroll.js 解决页面不支持弹性滚动，不支持fixed引起的问题~ 实现下拉刷新，滑屏，缩放等功能~
+underscore.js 该库提供了一整套函数式编程的实用功能，但是没有扩展任何JavaScript内置对象。
+fastclick 加快移动端点击响应时间
+animate.css CSS3动画效果库
+Normalize.css Normalize.css是一种现代的、CSS reset为HTML5准备的优质替代方案
+2. 滑屏框架
+适合上下滑屏、左右滑屏等滑屏切换页面的效果
+slip.js
+iSlider.js
+fullpage.js
+swiper
+3.瀑布流框架
+masonry
+工具推荐
+caniuse 各浏览器支持html5属性查询
+paletton 调色搭配
+==========================================================================================移动端web开发技巧==========================================================================================
+==========================================================================================和财富app微信分享格式===============================================================
+<a onclick="shareToSns('聪明的投资者都在这儿！','快和我一样，加入和财富大家族吧！我们是您的私人财富管家，聪明的投资者都在我们这儿。和你，和我，和财富！','http://www.hecaifu.com/invite/invite_user.html','http://www.hecaifu.com/logo.png')" href="javascript:android.shareToSns('聪明的投资者都在这儿！','快和我一样，加入和财富大家族吧！我们是您的私人财富管家，聪明的投资者都在我们这儿。和你，和我，和财富！','http://www.hecaifu.com/invite/invite_user.html','http://www.hecaifu.com/logo.png')" class="invite_a" id="invite_a">邀请</a>
+==========================================================================================和财富app微信分享格式===============================================================
+==========================================================================================百度地图秘钥-====================================================================================
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=19eCD9lfnItDfKr6rg4pAD4g"></script>
+==========================================================================================百度地图秘钥-====================================================================================
+==========================================================================================新浪微博分享url格式=================================================================
+http://service.weibo.com/share/share.php?title=%E4%BD%A0%E4%BB%AC%E5%BF%AB%E6%9D%A5%E6%84%9F%E5%8F%97%E4%B8%80%E4%B8%8B%EF%BC%9A%E6%88%91%E7%94%A8%E7%94%B5%E8%84%91%E5%BC%80%E5%90%AF%E7%9A%84%40360%E5%85%8D%E8%B4%B9WiFi+%E6%9C%80%E9%AB%98%E7%BD%91%E9%80%9F%E8%BE%BE%E5%88%B0%E4%BA%862.72MB%2Fs%EF%BC%8C%E7%9B%B4%E6%8E%A5%E7%A7%92%E6%9D%80%E4%BA%86%E5%85%A8%E5%9B%BD2731.1%E4%B8%87%E7%94%A8%E6%88%B7%E7%9A%84%E6%89%8B%E6%9C%BA%E4%B8%8A%E7%BD%91%E9%80%9F%E5%BA%A6%5B%E5%A8%81%E6%AD%A6%5D+%E8%B0%81%E6%95%A2%E6%9D%A5%E5%92%8C%E6%88%91PK%E4%B8%80%E4%B8%8B%EF%BC%9F%E6%8A%8A%E7%94%B5%E8%84%91%E7%BD%91%E7%BB%9C%E5%BD%93%E6%88%90%E5%85%8D%E8%B4%B9WiFi%EF%BC%8C%E5%BF%AB%E7%8C%9B%E6%88%B3%E8%BF%99%E9%87%8C%EF%BC%9Ahttp%3A%2F%2Fdown.360safe.com%2F360ap%2F360FreeAP_Setup.exe&pic=http%3A%2F%2Fp1.qhimg.com%2Ft01c5a03d3530cb29b6.png&ralateUid=5042398841
+==========================================================================================新浪微博分享url格式==========================================================================================
+==================================================================================react jsx babel=========================================================================
+1.npm install -g babel-cli
+npm install babel-preset-react
+Cd xxxxxxx
+babel --presets react src --watch --out-dir js(输入的项目目录)
+
+==========================================================================================gem sources taobao===============================================================
+
+gem sources --remove https://rubygems.org/
+
+gem sources -a https://ruby.taobao.org/
+gem install compass 
+gem install sass
+cd xxxx
+compass create
+==========================================================================================gem sources taobao===============================================================
+========================================================================================微信自定义分享======================================================================
+/*微信分享设置*/
+    $.ajax({
+        type: "get",
+        async: false,
+        url: "http://m.hecaifu.com///getWeiXinParameters//index.shtml",
+        data: {
+            url: window.location.href
+        },
+        dataType: "jsonp",
+        jsonp: "callback",
+        jsonpCallback: "weixin_share_gift",
+        success: function(data) {
+            var appId = data.appId;
+            var timeStamp = data.timestamp;
+            var nonceStr = data.nonceStr;
+            var signaTure = data.signature;
+            /*微信配置*/
+            wx.config({
+                appId: appId, // 必填，公众号的唯一标识
+                timestamp: timeStamp, // 必填，生成签名的时间戳
+                nonceStr: nonceStr, // 必填，生成签名的随机串
+                signature: signaTure, // 必填，签名，见附录1
+                jsApiList: [
+                    'onMenuShareTimeline',
+                    'onMenuShareAppMessage',
+                    'onMenuShareQQ',
+                    'onMenuShareWeibo'
+                ]
+            });
+        },
+        error: function(error) {
+            console.log('error1');
+        }
+    });
+    /*微信分享设置*/
+    /*执行微信ready方法*/
+    wx.ready(function() {
+        /*分享到朋友圈*/
+        wx.onMenuShareTimeline({
+            title: '和财富，您的私人财富管家！',
+            link: window.location.href,
+            imgUrl: 'http://www.hecaifu.com/activity/logo/hecaifu_logo.png',
+            success: function() {
+
+            },
+            cancel: function() {}
+        });
+        /*分享到朋友圈*/
+        /*发送给朋友*/
+        wx.onMenuShareAppMessage({
+            title: '和财富，您的私人财富管家！',
+            desc: '诚邀您一同体验和财富的私人财富管家服务！',
+            link: window.location.href,
+            imgUrl: 'http://www.hecaifu.com/activity/logo/hecaifu_logo.png',
+            success: function() {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function() {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+        /*发送给朋友*/
+    });
+    /*执行微信ready方法*/
+========================================================================================微信自定义分享======================================================================
+========================================================================================html meta 标签设定==================================================================
+1
+<meta name="apple-mobile-web-app-capable" content="yes" />
+说明：
+
+网站开启对 web app 程序的支持。
+该 meta 可以看出内容为“苹果设备 web 应用程序 xx”，就是说该 meta 是专门定义 web 应用的。
+5、name 属性的 apple-mobile-web-app-status-bar-style 值（改变顶部状态条的颜色）
+
+1
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+说明：
+
+在 web app 应用下状态条（屏幕顶部条）的颜色；
+默认值为 default（白色），可以定为 black（黑色）和 black-translucent（灰色半透明）；
+注意：若值为“black-translucent”将会占据页面位置，浮在页面上方（会覆盖页面 20px 高度 iphone4 和 itouch4 的 Retina 屏幕为 40px ）。
+
+6、name 属性设置作者姓名及联系方式
+
+1
+<meta name="author" contect="liudanyun, liudy102@163.com" />
+二、苹果 Web App 其他设置：
+
+当然，配合 Web App 的 icon 和启动界面需要额外的两端代码进行设定，如下所示：
+
+1
+<link rel="apple-touch-icon-precomposed" href="iphone_logo.png" />
+说明：这个 link 就是设置 Web App 的放置主屏幕上 icon 文件路径（图片四）。
+
+使用：
+
+该路径需要注意的就是放到将网站的文档根目录下但不是服务器的文档的根目录。
+图片尺寸可以设定为 57*57（px）或者 Retina 可以定为 114*114（px），iPad 尺寸为 72*72（px）
+1
+<link rel="apple-touch-startup-image" href="logo_startup.png" />
+说明：这个 link 就是设置启动时候的界面。
+
+使用：
+
+放置的路径和上面一样。
+官方规定启动界面的尺寸必须为 320*640（px），原本以为 Retina 屏幕可以支持双倍，但是不支持，图片显示不出来。
+如果对 Web App 的这两个 meta 还有不能详细理解的可以查看官方解释：Meta Tags
+
+关于 link 方面还有更多的参数设置（例如：iPod、iPad、iPhone 不同尺寸不同图标），可以查看官方标准文档：Configuring Web Applications
+========================================================================================html meta 标签设定==================================================================
+=========================================获取城市名字-经纬度==========================================================================================
+http://lbs.qq.com/uri_v1/guide-poiSearch.html
+http://lbs.qq.com/tool/component-geolocation.html
+
+
+https://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js
+// 获取城市名称
+var getCity = {
+    getGps: function(callback) {
+        var _me = this;
+        if(ah.inApp){
+            ah.callapp(['getCityId'], function(dict){
+                callback(dict['getCityId']);
+            });
+        } else {
+            _me.getCityH5(callback || function(){});
+        }
+    },
+    getCityH5: function(callback) { // 腾讯
+        var _me = this;
+        _locLib.getLocation(function(data){
+            var _lat = data.lat,
+                _lng = data.lng;
+            if (_lat && _lng) {
+                $.ajax({
+                    //url: location.protocol + '//m.qccr.com/city/pointer?lat=' + _lat + '&lng=' + _lng,
+                    url: '//m.qccr.com/city/pointer?lat=' + _lat + '&lng=' + _lng,
+                    dataType: 'jsonp',
+                    jsonp: 'callback',
+                    success: function(res) {
+                        if (res.code == 0 && res.data && res.data.city && res.data.city.name && res.data.city.id) {
+                            callback(res.data.city.id);
+                        }
+                    }
+                });
+
+            }
+        });
+    }
+};
+
+getCity.getGps(function(cid){
+            var map = {'22': 'hz', '69': 'bj', '72': 'sh'};
+            // 22 杭州 69 北京 72 上海
+            if(cid == 22 || cid == 69){
+                $('#by4s5z').attr('href', 'https://sale.qccr.com/appstatic/4sActivities/index_' + map[cid+''] + '.shtml').show();
+            }
+        });
+=========================================获取城市名字-经纬度=========================================================================
+=======================================诸葛Io=======================================================================================
+ <script type="text/javascript">
+    window.zhuge = window.zhuge || [];
+    window.zhuge.methods = "_init debug identify track trackLink trackForm page".split(" ");
+    window.zhuge.factory = function(b) {
+        return function() {
+            var a = Array.prototype.slice.call(arguments);
+            a.unshift(b);
+            window.zhuge.push(a);
+            return window.zhuge;
+        }
+    };
+    for (var i = 0; i < window.zhuge.methods.length; i++) {
+        var key = window.zhuge.methods[i];
+        window.zhuge[key] = window.zhuge.factory(key);
+    }
+    window.zhuge.load = function(b, x) {
+        if (!document.getElementById("zhuge-js")) {
+            var a = document.createElement("script");
+            var verDate = new Date();
+            var verStr = verDate.getFullYear().toString()
+                + verDate.getMonth().toString() + verDate.getDate().toString();
+
+            a.type = "text/javascript";
+            a.id = "zhuge-js";
+            a.async = !0;
+            a.src = (location.protocol == 'http:' ? "http://sdk.zhugeio.com/zhuge.min.js?v=" : 'https://zgsdk.zhugeio.com/zhuge.min.js?v=') + verStr;
+             a.onerror = function(){  
+             window.zhuge.identify = window.zhuge.track = function(ename, props, callback){                   
+               if(callback && Object.prototype.toString.call(callback) === '[object Function]')callback();               
+                };     
+            };
+            var c = document.getElementsByTagName("script")[0];
+            c.parentNode.insertBefore(a, c);
+            window.zhuge._init(b, x)
+        }
+    };
+    window.zhuge.load('997dc477e5434d06aef89fce159f96d6');
+    </script>
+var userAgent = navigator.userAgent; 
+var and_ios="";
+var ua = navigator.userAgent.toLowerCase(); 
+  if (/iphone|ipad|ipod/.test(ua)) {
+        //alert("iphone");   
+        and_ios="iphone" ;
+  } else if (/android/.test(ua)) {
+      
+         and_ios="android" ;
+  }
+
+ zhuge.track('移动端访问的游览器', {
+    '游览器类型' :and_ios
+    });
+ zhuge.track('移动端访问'); 
+function myBrowser() {
+        var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+        var isChrome = userAgent.indexOf("Chrome") > -1; //判断是否Chrome浏览器
+        var isOpera = userAgent.indexOf("Opera") > -1; //判断是否Opera浏览器
+        var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1 && !isOpera; //判断是否IE浏览器
+        var isFF = userAgent.indexOf("Firefox") > -1; //判断是否Firefox浏览器
+        var isSafari = userAgent.indexOf("Safari") > -1; //判断是否Safari浏览器
+ 
+        if (isIE) {
+            var IE5 = IE55 = IE6 = IE7 = IE8 = false;
+ 
+            var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+            reIE.test(userAgent);
+ 
+            var fIEVersion = parseFloat(RegExp["$1"]);
+            IE55 = fIEVersion == 5.5;
+            IE6 = fIEVersion == 6.0;
+            IE7 = fIEVersion == 7.0;
+            IE8 = fIEVersion == 8.0;
+ 
+            if (IE55) { return "IE55"; }
+            else if (IE6) { return "IE6"; }
+            else if (IE7) { return "IE7"; }
+            else if (IE8) { return "IE8"; }
+        }
+        else if (isFF) { return "FF"; }
+        else if (isChrome) { return "Chrome"; }
+        else if (isOpera) { return "Opera"; }
+        else if (isSafari) { return "Safari"; }
+    }
+ var myBrowserVal=myBrowser();
+ zhuge.track('PC端访问的游览器', {
+    '游览器类型' :myBrowserVal
+    });
+zhuge.track('PC端访问'); 
+=======================================诸葛Io=======================================================================================
+=======================================GitHub jsonp 请求======================================================================================
+$.ajax({
+        type: "get",
+        async: false,
+        //url: 'http://192.168.1.236:8081/ytflserver/handle!queryTotalNum.htm',
+        //url: 'http://api.ipaychat.com/user!queryTotalNum.htm',
+       url: 'https://api.github.com/repos/astaxie/beego',
+        data: {},
+        dataType: "jsonp",
+        jsonp: "callback",
+
+        success: function(data) {
+          console.log(data);
+
+           
+
+        },
+        error: function(error) {
+            console.log('fail');
+        }
+    });
+=======================================GitHub jsonp 请求======================================================================================
+==============================================scss  样本=====================================================================================
+@import "compass/css3";
+@import "var";
+$base:50;
+body,
+html {
+    font-family: 'PingFang SC Medium', "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    color: #181615;
+    background-color: #fff;
+    -webkit-touch-callout: none;
+    -moz-touch-callout: none;
+    -ms-touch-callout: none;
+    -o-touch-callout: none;
+    touch-callout: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+html,
+body {
+    background-color: #f3f3f3;
+}
+
+.main_lct_show {
+    width: 750rem/$base;
+    height: 100%;
+    @include mag;
+    @include pr;
+    @include fo(25.6rem/$base);
+
+    -webkit-animation-name: opacitylct;
+    animation-name: opacitylct;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    @include ov;
+    @include co(#fff);
+}
+
+
+//tanchuang
+@keyframes opacitylct {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes opacitylct {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+==============================================scss  样本=====================================================================================
+==============================================迭代=======================================================================================
+var server = http.createServer(function(req,res){
+	//不处理收藏夹小图标
+	if(req.url == "/favicon.ico"){
+		return;
+	}
+	//遍历album里面的所有文件、文件夹
+	fs.readdir("./album/",function(err,files){
+		//files : ["0.jpg","1.jpg" ……,"aaa","bbb"];
+		//files是一个存放文件(夹)名的数组
+		//存放文件夹的数组
+		var wenjianjia = [];
+		//迭代器就是强行把异步的函数，变成同步的函数
+		//1做完了，再做2；2做完了，再做3
+		(function iterator(i){
+			//遍历结束
+			if(i == files.length){
+				console.log(wenjianjia);
+				return;
+			}
+			fs.stat("./album/" + files[i],function(err,stats){
+				//检测成功之后做的事情
+				if(stats.isDirectory()){
+					//如果是文件夹，那么放入数组。不是，什么也不做。
+					wenjianjia.push(files[i]);
+				}
+				iterator(i+1);
+			});
+		})(0);
+	});
+	res.end();
+});
+==============================================迭代=======================================================================================
