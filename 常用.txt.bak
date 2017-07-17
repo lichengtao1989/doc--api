@@ -1,26 +1,3 @@
- ===========================================cookie=========================================== ===========================================
-/* 设置cookie函数 */
-  function setCookie(key,value,day) {
-      var date=new Date();
-     date.setDate(date.getDate()+day);
-      document.cookie=key+'='+escape(value)+';expires='+date;
-  }
-  /* 获取cookie函数 */
-  function getCookie(key) {
-      var coo=unescape(document.cookie);//解码
-     var arr1=coo.split('; ');//第一次分解后是数组
-    for (var i=0;i<arr1.length;i++){//第二次循环拆分数组
-       var arr2=arr1[i].split('=');
-        if(arr2[0]==key){
-            return arr2[1];
-        }
-     }
- }
- /* 删除cookie */
- function removeCookie(key) {
-     setCookie(key,'',-1);
- }
- ===========================================cookie=========================================== ===========================================
 ===========================================字体=========================================================================
 font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 ===========================================字体=========================================================================
