@@ -1,3 +1,36 @@
+  ===========================================js迭代器=========================================== ======================
+  <script>
+        var arr = ["a", "b", "c", "dd", "e1"];
+        var strlct = "";
+        (function iterator(i) {
+            if (i == arr.length) {
+                return;
+            };
+            strlct += arr[i];
+            iterator(i + 1)
+        })(0);
+        document.querySelector('#hh1').innerHTML = strlct;
+    </script>
+===========================================js迭代器=========================================== ======================
+===========================================百度地图获取地址已经经纬度=========================================== ======================
+	<script>
+        var _script = document.createElement('script');
+        _script.type = "text/javascript";
+        _key = "55UbnVOR7XovezZC4jFvTqNDPAamsuoo"; //百度地图可以申请到  
+        _script.src = "http://api.map.baidu.com/location/ip?ak=" + _key + "&coor=bd09ll&ip=&callback=f"; //拼接URL  
+        document.head.appendChild(_script);
+        var pointX;
+        var pointY;
+
+        function f(data) {
+            pointX = data.content.point.x;
+            pointY = data.content.point.y;
+            document.getElementById("comefrom").innerHTML = "你所在城市:" + data.content.address;
+            document.getElementById("pointX").innerHTML = "你城市经度:" + pointX;
+            document.getElementById("pointY").innerHTML = "你的城市纬度:" + pointY;
+        }
+    </script>
+ ===========================================百度地图获取地址已经经纬度=========================================== ======================
  ===========================================cookie=========================================== ===========================================
 /* 设置cookie函数 */
   function setCookie(key,value,day) {
@@ -2116,6 +2149,9 @@ paletton 调色搭配
 ==========================================================================================和财富app微信分享格式===============================================================
 ==========================================================================================百度地图秘钥-====================================================================================
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=19eCD9lfnItDfKr6rg4pAD4g"></script>
+	9904531	
+web地图
+YURET7GgM2w6tXPEGGyiXPG3ofPn7Nn5	浏览器端		设置 删除
 ==========================================================================================百度地图秘钥-====================================================================================
 ==========================================================================================新浪微博分享url格式=================================================================
 http://service.weibo.com/share/share.php?title=%E4%BD%A0%E4%BB%AC%E5%BF%AB%E6%9D%A5%E6%84%9F%E5%8F%97%E4%B8%80%E4%B8%8B%EF%BC%9A%E6%88%91%E7%94%A8%E7%94%B5%E8%84%91%E5%BC%80%E5%90%AF%E7%9A%84%40360%E5%85%8D%E8%B4%B9WiFi+%E6%9C%80%E9%AB%98%E7%BD%91%E9%80%9F%E8%BE%BE%E5%88%B0%E4%BA%862.72MB%2Fs%EF%BC%8C%E7%9B%B4%E6%8E%A5%E7%A7%92%E6%9D%80%E4%BA%86%E5%85%A8%E5%9B%BD2731.1%E4%B8%87%E7%94%A8%E6%88%B7%E7%9A%84%E6%89%8B%E6%9C%BA%E4%B8%8A%E7%BD%91%E9%80%9F%E5%BA%A6%5B%E5%A8%81%E6%AD%A6%5D+%E8%B0%81%E6%95%A2%E6%9D%A5%E5%92%8C%E6%88%91PK%E4%B8%80%E4%B8%8B%EF%BC%9F%E6%8A%8A%E7%94%B5%E8%84%91%E7%BD%91%E7%BB%9C%E5%BD%93%E6%88%90%E5%85%8D%E8%B4%B9WiFi%EF%BC%8C%E5%BF%AB%E7%8C%9B%E6%88%B3%E8%BF%99%E9%87%8C%EF%BC%9Ahttp%3A%2F%2Fdown.360safe.com%2F360ap%2F360FreeAP_Setup.exe&pic=http%3A%2F%2Fp1.qhimg.com%2Ft01c5a03d3530cb29b6.png&ralateUid=5042398841
