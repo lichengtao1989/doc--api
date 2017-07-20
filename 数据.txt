@@ -1,0 +1,83 @@
+富聊App下载地址：
+移动端应用宝
+http://a.app.qq.com/o/simple.jsp?pkgname=com.esky.echat&ckey=CK1292434798497
+http://a.app.qq.com/o/simple.jsp?pkgname=com.esky.echat&ckey=CK1296561805383
+http://down.ipaychat.com/echat.apk
+pc appstore：
+https://itunes.apple.com/cn/app/id630429447?ls=1&mt=8
+
+富聊Svn地址：
+UI：   svn://www.ipaychat.com/projects/doc_ui/
+
+下载页面移动端 地址
+http://www.ipaychat.com/d.html
+
+下载页面
+http://share.ipaychat.com/d1/wxshare/2015/01/21/down_boy.html?code=051Ysl1C1rD7X000jD2C1dbf1C1Ysl1X&state=14083713
+
+微信分享：
+   var serverurl = decodeURIComponent(window.shareUrl);
+    serverurl = encodeURIComponent(serverurl).replace("!", "%21");
+    var link = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx56fff488639d9d95&redirect_uri=' + serverurl + '&response_type=code&scope=snsapi_base&state=' + room_id + ',' + touserid + '#wechat_redirect';
+    var title = $('#anchorname').val() + '的直播';
+    var desc = '我正在富聊观看' + $('#anchorname').val() + '的直播，速来围观~';
+    var link = link;
+    var imgUrl = livedata.weblivemap.liveinfo.anchorpic;
+    wxshare(title, desc, link, imgUrl);
+
+微信公众号
+"账号：2790441498@qq.com
+密码：fuliao2013
+商户号:1408511202"
+
+"fuliao 密码
+FuLiao_Ap^787"
+
+git 公钥
+ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAqw3/D+LyPGpEd1kgYrY9OGTtwjAnCrvvq82/PKjZ9B0hTc9JCmfQj2QQihUbjLj+EhjVS7CgIkNSsz9/v2DpuVSmOUXLHtj+/g9FrMZCJkc5IcdOTSdqrlK1+PgRMzPWtOZuUFLVKka1+xt7kOgy8eCkBjrXpjRqVcADRgKBveL7ooBiIKfK3rzfG1LCAjFGBRE6fS03JOyAow0rtojcYiQAq6BMeY8CIqZp2HC7cOBDOoodRrb6d3BqukhrZBBLiCD7LMWDhudlCXIfeE6aAp+l8qqWZpp77GAXjdb0VK+Y1VFI4xUtw49KKkJjt3xCJSXbJP/Rj2C/Y2Vnkv60KQ== rsa-key-20170606
+
+git地址
+weblive    http://gitlab.ipaychat.com/webadmin/weblive
+wx_getrewards    http://gitlab.ipaychat.com/cpi/html
+
+网址：
+"pc官网：http://www.ipaychat.com/
+手机端官网：http://www.ipaychat.com/index_m.html
+领取奖励：http://share.ipaychat.com/app/wx_getrewards/getrewards.html
+公众号充值：http://share.ipaychat.com/app/publicpay/publicpay.html?openid=ozlVat54BshiTHJ_wGCfn3Va6qYw&type=pubAccountRecharge
+微信直播间：http://share.ipaychat.com/app/v432/weblive.html?unionid=oAoxsuFEjKw-jBjBMe0yQYiALyGI&openid=ozlVat4pm6PR2j-ZkIF0m7VERxn0&touserid=100001&roomid=60798976&auth_type=0"
+
+富聊小程序
+"AppID(小程序ID)   wx276ac8aad6677b31 
+AppSecret(小程序密钥)?1d71fd04a19ab4686571e932e7444508
+ wx276ac8aad6677b31                 1d71fd04a19ab4686571e932e7444508"
+
+"小程序登录：
+3288540081@qq.com
+wo20......"
+
+jumpserver
+"
+    Hi, lichengtao
+        您的用户名： lichengtao
+        您的权限： 普通用户
+        您的web登录密码： w9Zu_7WrGZX2U1Ue
+        您的ssh密钥文件密码： 60XnlRfnCakCtX_S
+        密钥下载地址： http://116.62.201.237:8000/juser/key/down/?uuid=627d6ef295a9498e85c29dd76fc4867e
+        说明： 请登陆跳板机后台下载密钥, 然后使用密钥登陆跳板机！
+    
+进入先按回车
+按0 回车
+cd /
+ls
+
+
+
+解压命令是：unzip filename.zip 
+
+
+116.62.201.237
+端口22
+
+示例地址：http://s.ipaychat.com/app/staticcommon/vue-2.1.8.min.js"
+
