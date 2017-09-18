@@ -7,6 +7,125 @@ Hi, lichengtao
         密钥下载地址： http://116.62.201.237:8000/juser/key/down/?uuid=627d6ef295a9498e85c29dd76fc4867e
         说明： 请登陆跳板机后台下载密钥, 然后使用密钥登陆跳板机！
  ==========================================跳板机=====================================================================
+ ==========================================fundebug.js=====================================================================
+1. 将fundebug.js插入您网页的<head>标签  参考文档
+<script src="https://og6593g2z.qnssl.com/fundebug.0.2.0.min.js"
+        apikey="297ce0271c21ba009b88311566b793b9f7ddcef5a51f400d2e36cc0c6c38a41c"></script>
+ ==========================================fundebug.js=====================================================================
+==============================================touchmove===================================================================
+$(".redenvelope_box").on("touchmove", function(event) {
+             event.preventDefault;
+         }, false);
+$("body").off("touchmove");
+==============================================touchmove===================================================================
+==============================================VUE========================================================================
+<template>
+  <div id="app" @touchmove.prevent>
+    <m-header></m-header>
+    <tab></tab>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
+    <player></player>
+  </div>
+</template>
+
+<script type="text/ecmascript-6">
+  import MHeader from 'components/m-header/m-header'
+  import Player from 'components/player/player'
+  import Tab from 'components/tab/tab'
+
+  export default {
+    components: {
+      MHeader,
+      Tab,
+      Player
+    }
+  }
+</script>
+
+<style scoped lang="stylus" rel="stylesheet/stylus">
+</style>
+==============================================VUE==========================================================================================
+==========================================promise================================================================
+
+let promise = new Promise(function(resolve, reject) {
+  console.log('Promise');
+  resolve();
+});
+
+promise.then(function() {
+  console.log('resolved.');
+});
+
+console.log('Hi!');
+
+    //创建一个Promise实例，获取数据。并把数据传递给处理函数resolve和reject。需要注意的是Promise在声明的时候就执行了。
+    var getUserInfo = new Promise(function(resolve, reject) {
+        $.ajax({
+            type: "get",
+            async: true,
+            url: "http://w.api.xiaoying.co/webapi2/rest/user/detail",
+            data: {
+                "appkey": "30000000",
+                "auid": "e1nv"
+            },
+            dataType: "jsonp",
+            jsonp: "callback",
+            // jsonpCallback: "info_detail",
+            success: function(data) {
+
+                resolve(data)
+            },
+            error: function(error) {
+                console.log('info_detail_fail');
+            }
+        });
+
+    });
+
+    getUserInfo.then(function(data) {
+        //通过拿到的数据渲染页面
+        console.log(data)
+
+    }).catch(function(ErrMsg) {
+        //获取数据失败时的处理逻辑
+    });
+
+下面是异步加载图片的例子。
+function loadImageAsync(url) {
+  return new Promise(function(resolve, reject) {
+    var image = new Image();
+
+    image.onload = function() {
+      resolve(image);
+    };
+
+    image.onerror = function() {
+      reject(new Error('Could not load image at ' + url));
+    };
+
+    image.src = url;
+  });
+}
+==========================================promise================================================================
+ ==========================================UA=====================================================================
+
+   var userAgent = navigator.userAgent;
+            var and_ios = "";
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == 'micromessenger' && and_ios == "iphone") {
+                $('.download').attr('href', url1);
+            }
+
+            if (/iphone|ipad|ipod/.test(ua)) {
+                $('.download').attr('href', url1);
+
+            };
+            if (/android/.test(ua)) {
+                $('.download').attr('href', url2);
+            };
+ ==========================================UA=====================================================================
   ===========================================js迭代器=========================================== ======================
   <script>
         var arr = ["a", "b", "c", "dd", "e1"];
@@ -65,6 +184,18 @@ Hi, lichengtao
         }
     </script>
  ===========================================百度地图获取地址已经经纬度=========================================== ======================
+=========================================getUrlParam==================================================================================================
+function getUrlParam(name) {
+    //构造一个含有目标参数的正则表达式对象  
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    //匹配目标参数  
+    var r = window.location.search.substr(1).match(reg);
+    //返回参数值  
+    if (r != null) return unescape(r[2]);
+    return null;
+}
+=========================================getUrlParam==================================================================================================
+
  ===========================================cookie=========================================== ===========================================
 /* 设置cookie函数 */
   function setCookie(key,value,day) {
